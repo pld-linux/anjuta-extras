@@ -11,12 +11,14 @@ BuildRequires:	GConf2-devel >= 2.20.0
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
 BuildRequires:	binutils-devel >= 3:2.15.92
+BuildRequires:	gettext-devel
 BuildRequires:	gnome-common
 BuildRequires:	graphviz-devel
 BuildRequires:	gtk+2-devel >= 2:2.18.0
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	libanjuta-devel >= 1:2.30.1.0
 BuildRequires:	libgnomecanvas-devel >= 2.12.0
+BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 BuildRequires:	pkgconfig
 Requires(post,preun):	GConf2
