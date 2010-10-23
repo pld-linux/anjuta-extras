@@ -1,7 +1,7 @@
 Summary:	Extra plugins for Anjuta
 Name:		anjuta-extras
 Version:	2.30.1.0
-Release:	5
+Release:	6
 License:	GPL v2
 Group:		Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/anjuta-extras/2.30/%{name}-%{version}.tar.bz2
