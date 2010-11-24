@@ -1,11 +1,11 @@
 Summary:	Extra plugins for Anjuta
 Name:		anjuta-extras
-Version:	2.30.1.0
-Release:	8
+Version:	2.32.0.0
+Release:	1
 License:	GPL v2
 Group:		Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/anjuta-extras/2.30/%{name}-%{version}.tar.bz2
-# Source0-md5:	c76a0843896890e054b063551fa431eb
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/anjuta-extras/2.32/%{name}-%{version}.tar.bz2
+# Source0-md5:	44e79fb026524897d123bcde5e7861f9
 URL:		http://www.anjuta.org/
 BuildRequires:	GConf2-devel >= 2.20.0
 BuildRequires:	autoconf >= 2.59
@@ -16,13 +16,13 @@ BuildRequires:	gnome-common
 BuildRequires:	graphviz-devel
 BuildRequires:	gtk+2-devel >= 2:2.18.0
 BuildRequires:	intltool >= 0.35.0
-BuildRequires:	libanjuta-devel >= 1:2.30.1.0
+BuildRequires:	libanjuta-devel >= 1:2.32.0.0
 BuildRequires:	libgnomecanvas-devel >= 2.12.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 BuildRequires:	pkgconfig
 Requires(post,preun):	GConf2
-Requires:	anjuta >= 1:2.30.1.0
+Requires:	anjuta >= 1:2.32.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -76,13 +76,11 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/anjuta/libanjuta-class-inheritance.so
 %attr(755,root,root) %{_libdir}/anjuta/libanjuta-editor.so
 %attr(755,root,root) %{_libdir}/anjuta/libanjuta-profiler.so
 %attr(755,root,root) %{_libdir}/anjuta/libanjuta-sample.so
 %attr(755,root,root) %{_libdir}/anjuta/libanjuta-scratchbox.so
 %attr(755,root,root) %{_libdir}/anjuta/libanjuta-valgrind.so
-%{_libdir}/anjuta/anjuta-class-inheritance.plugin
 %{_libdir}/anjuta/anjuta-editor.plugin
 %{_libdir}/anjuta/profiler.plugin
 %{_libdir}/anjuta/anjuta-sample.plugin
