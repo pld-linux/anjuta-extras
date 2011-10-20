@@ -1,11 +1,11 @@
 Summary:	Extra plugins for Anjuta
 Name:		anjuta-extras
-Version:	2.32.0.0
-Release:	5
-License:	GPL v2
+Version:	2.32.1.1
+Release:	1
+License:	GPL v2+
 Group:		Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/anjuta-extras/2.32/%{name}-%{version}.tar.bz2
-# Source0-md5:	44e79fb026524897d123bcde5e7861f9
+# Source0-md5:	5aa453da4096d8ade00c01dcf54a576a
 URL:		http://www.anjuta.org/
 BuildRequires:	GConf2-devel >= 2.20.0
 BuildRequires:	autoconf >= 2.59
@@ -58,7 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/anjuta/*.{a,la}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/anjuta/*.{a,la}
 
 %find_lang %{name}
 
