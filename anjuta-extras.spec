@@ -65,33 +65,18 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-%gconf_schema_install anjuta-editor-scintilla.schemas
-%gconf_schema_install anjuta-valgrind.schemas
-
-%preun
-%gconf_schema_uninstall anjuta-editor-scintilla.schemas
-%gconf_schema_uninstall anjuta-valgrind.schemas
-
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/anjuta/libanjuta-editor.so
-%attr(755,root,root) %{_libdir}/anjuta/libanjuta-profiler.so
 %attr(755,root,root) %{_libdir}/anjuta/libanjuta-sample.so
 %attr(755,root,root) %{_libdir}/anjuta/libanjuta-scratchbox.so
-%attr(755,root,root) %{_libdir}/anjuta/libanjuta-valgrind.so
 %{_libdir}/anjuta/anjuta-editor.plugin
-%{_libdir}/anjuta/profiler.plugin
 %{_libdir}/anjuta/anjuta-sample.plugin
 %{_libdir}/anjuta/anjuta-scratchbox.plugin
-%{_libdir}/anjuta/anjuta-valgrind.plugin
-%{_sysconfdir}/gconf/schemas/anjuta-editor-scintilla.schemas
-%{_sysconfdir}/gconf/schemas/anjuta-valgrind.schemas
 %{_datadir}/anjuta/glade/*.png
 %{_datadir}/anjuta/glade/*.ui
 %{_datadir}/anjuta/properties
 %{_datadir}/anjuta/ui/*.ui
-%{_datadir}/anjuta/ui/*.xml
 %{_pixmapsdir}/anjuta/*.png
 %{_pixmapsdir}/anjuta/*.svg
