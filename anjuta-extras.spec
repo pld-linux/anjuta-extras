@@ -1,30 +1,31 @@
 Summary:	Extra plugins for Anjuta
+Summary(pl.UTF-8):	Dodatkowe wtyczki dla Anjuty
 Name:		anjuta-extras
-Version:	3.4.0
+Version:	3.26.0
 Release:	1
 License:	GPL v2+
 Group:		Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/anjuta-extras/3.4/%{name}-%{version}.tar.xz
-# Source0-md5:	fa1946725c0f45ffa7ee64b4a2c8f86e
-URL:		http://www.anjuta.org/
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/anjuta-extras/3.26/%{name}-%{version}.tar.xz
+# Source0-md5:	c08e83b6d24dc735fd54f6c964aec1e2
+URL:		http://anjuta.org/
 BuildRequires:	autoconf >= 2.59
-BuildRequires:	automake
+BuildRequires:	automake >= 1:1.10
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.26.0
 BuildRequires:	gnome-common
-BuildRequires:	gnome-doc-utils >= 0.18.0
 BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	intltool >= 0.35.0
-BuildRequires:	libanjuta-devel >= 1:3.4.0
+BuildRequires:	libanjuta-devel >= 1:3.26.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
-BuildRequires:	libxml2-devel
+BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.592
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+BuildRequires:	yelp-tools
 Requires(post,postun):	glib2 >= 1:2.26.0
-Requires:	anjuta >= 1:3.4.0
+Requires:	anjuta >= 1:3.26.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -34,6 +35,14 @@ The following plugins are included:
 - Sample Plugin: Sample Plugin for Anjuta
 - Scintilla Editor: An alternate editor based on Scintilla
 - Scratchbox: Change build commands to use scratchbox 1 or 2
+
+%description -l pl.UTF-8
+Ten pakiet zawiera zestaw wtyczek dla Anjuty. Zawiera następujące
+wtyczki:
+- Sample Plugin - przykładowa wtyczka
+- Scintilla Editor - alternatywny edytor, oparty na Scintilli
+- Scratchbox - zmiana poleceń budowania do używania scratchboksa 1 lub
+  2
 
 %prep
 %setup -q
@@ -71,19 +80,26 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
+%doc AUTHORS NEWS
+
 %attr(755,root,root) %{_libdir}/anjuta/libanjuta-editor.so
-%attr(755,root,root) %{_libdir}/anjuta/libanjuta-sample.so
-%attr(755,root,root) %{_libdir}/anjuta/libanjuta-scratchbox.so
 %{_libdir}/anjuta/anjuta-editor.plugin
-%{_libdir}/anjuta/anjuta-sample.plugin
-%{_libdir}/anjuta/anjuta-scratchbox.plugin
-%{_datadir}/glib-2.0/schemas/org.gnome.anjuta.plugins.scintilla.gschema.xml
-%{_datadir}/glib-2.0/schemas/org.gnome.anjuta.plugins.scratchbox.gschema.xml
-%{_datadir}/anjuta/glade/*.png
-%{_datadir}/anjuta/glade/*.ui
+%{_datadir}/anjuta/glade/anjuta-editor-scintilla.ui
 %{_datadir}/anjuta/properties
-%{_datadir}/anjuta/ui/*.ui
-%{_datadir}/anjuta/ui/*.xml
-%{_pixmapsdir}/anjuta/*.png
-%{_pixmapsdir}/anjuta/*.svg
+%{_datadir}/anjuta/ui/anjuta-scintilla.xml
+%{_datadir}/glib-2.0/schemas/org.gnome.anjuta.plugins.scintilla.gschema.xml
+%{_pixmapsdir}/anjuta/anjuta-editor-scintilla-plugin-48.png
+%{_pixmapsdir}/anjuta/anjuta-editor-scintilla-plugin.svg
+
+%attr(755,root,root) %{_libdir}/anjuta/libanjuta-sample.so
+%{_libdir}/anjuta/anjuta-sample.plugin
+%{_datadir}/anjuta/ui/anjuta-sample.ui
+%{_pixmapsdir}/anjuta/anjuta-sample-plugin-48.png
+%{_pixmapsdir}/anjuta/anjuta-sample-plugin.svg
+
+%attr(755,root,root) %{_libdir}/anjuta/libanjuta-scratchbox.so
+%{_libdir}/anjuta/anjuta-scratchbox.plugin
+%{_datadir}/anjuta/glade/anjuta-scratchbox.ui
+%{_datadir}/anjuta/glade/anjuta-scratchbox-panel.png
+%{_datadir}/glib-2.0/schemas/org.gnome.anjuta.plugins.scratchbox.gschema.xml
+%{_pixmapsdir}/anjuta/anjuta-scratchbox-48.png
