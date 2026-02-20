@@ -2,7 +2,7 @@ Summary:	Extra plugins for Anjuta
 Summary(pl.UTF-8):	Dodatkowe wtyczki dla Anjuty
 Name:		anjuta-extras
 Version:	3.26.0
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/anjuta-extras/3.26/%{name}-%{version}.tar.xz
